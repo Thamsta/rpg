@@ -1,6 +1,6 @@
 scr_get_input();
 
-if(sprint){
+if(sprint && obj_player_stats.stamina > obj_player_stats.maxStamina / 3){
 state = scr_sprint_state;
 }
 
@@ -23,3 +23,6 @@ vspd = lengthdir_y(len, dir);
 // move
 phy_position_x += hspd;
 phy_position_y += vspd;
+
+//recover stamina
+scr_recover_stamina();

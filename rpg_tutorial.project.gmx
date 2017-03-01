@@ -16,12 +16,14 @@
     <script>scripts\scr_move_state.gml</script>
     <script>scripts\scr_sprint_state.gml</script>
     <script>scripts\scr_get_input.gml</script>
+    <script>scripts\scr_recover_stamina.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_view</object>
     <object>objects\obj_lifeform</object>
+    <object>objects\obj_player_stats</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_1</room>
