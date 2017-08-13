@@ -3,25 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="1" name="datafiles">
-    <datafile>
-      <name>save.ini</name>
-      <exists>-1</exists>
-      <size>3</size>
-      <exportAction>2</exportAction>
-      <exportDir></exportDir>
-      <overwrite>0</overwrite>
-      <freeData>-1</freeData>
-      <removeEnd>0</removeEnd>
-      <store>0</store>
-      <ConfigOptions>
-        <Config name="Default">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-      </ConfigOptions>
-      <filename>save.ini</filename>
-    </datafile>
-  </datafiles>
+  <datafiles number="1" name="datafiles"/>
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
@@ -39,6 +21,8 @@
     <script>scripts\scr_move_state.gml</script>
     <script>scripts\scr_recover_stamina.gml</script>
     <script>scripts\scr_sprint_state.gml</script>
+    <script>scripts\scr_load.gml</script>
+    <script>scripts\scr_save.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
@@ -49,6 +33,7 @@
     <object>objects\obj_startposition</object>
     <object>objects\obj_player_stats</object>
     <object>objects\obj_chest</object>
+    <object>objects\obj_pause</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_1</room>
