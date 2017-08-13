@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>obj_lifeform</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>/// init
 phy_fixed_rotation = true;
+last_room = rm_1;
 spd = 5;
 sprScale = 1.7; //speed multiplier while sprinting
 hspd = 0;
@@ -56,8 +57,94 @@ state = scr_move_state;
           <argument>
             <kind>1</kind>
             <string>///Player movement
-event_inherited();
+
 script_execute(state);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_chest">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(f_down){
+other.is_open = !other.is_open;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_door">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Go through the door
+if (room_exists (other.next_room)) {
+    room_goto (other.next_room);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Move to start position
+if  (instance_exists(obj_startposition))  {
+    var r = last_room;
+    with (obj_startposition) {
+        if (r == last_room) {
+            obj_player.phy_position_x = x;
+            obj_player.phy_position_y = y;
+        }
+    }
+}
+
+last_room = room;
+phy_fixed_rotation = true;
 </string>
           </argument>
         </arguments>
@@ -76,8 +163,8 @@ script_execute(state);
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>0,0</point>
-    <point>32,0</point>
+    <point>0,16</point>
+    <point>32,16</point>
     <point>32,32</point>
     <point>0,32</point>
   </PhysicsShapePoints>
