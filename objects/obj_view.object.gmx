@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///move towards the player
-x += (obj_player.x - x) * 0.3;
+x += ((obj_player.x+16) - x) * 0.3;
 y += (obj_player.y - y) * 0.3;
 </string>
           </argument>

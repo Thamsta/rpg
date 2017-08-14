@@ -25,7 +25,74 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>pause = false;
+            <string>///init
+pause = false;
+
+menu[0] = "Continue";
+menu[1] = "Save";
+menu[2] = "Load";
+menu[3] = "Exit";
+
+menu_gap = 64;
+active = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///menu logic
+if(pause){
+
+scr_get_input();
+if(up_down &amp;&amp; active &gt; 0)
+{
+    active--;
+}
+else if(down_down &amp;&amp; active &lt; array_length_1d(menu)-1)
+{
+    active++;
+}
+if(enter)
+{
+    switch(active)
+    {
+    case 0: 
+        pause = false;
+        instance_activate_all();
+        break;
+    case 1:
+        scr_save();
+        break;
+    case 2:
+        scr_load();
+        break;
+    case 3:
+        scr_quit();
+        break;
+    }
+}
+
+
+
+
+}
 </string>
           </argument>
         </arguments>
@@ -48,16 +115,21 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(pause)
+            <string>///draw menu
+if(pause)
 {
     draw_set_color(c_black);
-    draw_set_alpha(0.60);
+    //draw_set_alpha(0.60); only necessary with background
     draw_rectangle(view_xport[0],view_yport[0],view_wport[0],view_hport[0], 0);
     draw_set_halign(fa_center);
     draw_set_color(c_white);
-    draw_text(view_wport[0]/2,view_hport[0]/2, "GAME PAUSED");
-    
-    draw_set_alpha(1);
+    draw_text(view_wport[0]/2, 64, "GAME PAUSED"); 
+    for(i=0; i &lt; array_length_1d(menu); i++){
+        if(i=active){draw_set_color(c_red);}
+        draw_text(view_wport[0]/2, (i+3)*menu_gap, menu[i]);
+        draw_set_color(c_white);
+    }
+    //draw_set_alpha(1);  see above
 }
 </string>
           </argument>
@@ -81,8 +153,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!pause){
+            <string>///toggle pause
+if(!pause){
 pause = true;
+active = 0;
 instance_deactivate_all(true);
 }else{
 pause = false;

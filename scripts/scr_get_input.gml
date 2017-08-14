@@ -4,3 +4,6 @@ up_key = keyboard_check(vk_up);
 down_key = keyboard_check(vk_down);
 sprint = keyboard_check(vk_shift);
 f_down = keyboard_check_pressed(ord('F'));
+up_down = keyboard_check_pressed(vk_up);
+down_down = keyboard_check_pressed(vk_down);
+enter = keyboard_check_released(vk_enter);

@@ -60,7 +60,7 @@ experience = 0;
 draw_set_halign(fa_left);
 draw_set_color(c_black);
 draw_text(16,16, "HP: " + string(hp) + "/" + string(maxHp));
-draw_text(16,32, "STAMINA: " + string(floor(stamina)) + "/" + string(maxStamina));
+draw_text(16,32, "STAMINA: " + string(ceil(stamina)) + "/" + string(maxStamina));
 draw_set_halign(fa_center);
 </string>
           </argument>
