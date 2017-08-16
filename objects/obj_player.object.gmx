@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>/// init
 phy_fixed_rotation = true;
-last_room = rm_1;
+last_room = init;
 spd = 5;
 sprScale = 1.7; //speed multiplier while sprinting
 hspd = 0;

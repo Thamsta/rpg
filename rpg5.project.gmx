@@ -25,6 +25,7 @@
     <script>scripts\scr_load.gml</script>
     <script>scripts\scr_save.gml</script>
     <script>scripts\scr_quit.gml</script>
+    <script>scripts\scr_notification.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
@@ -36,8 +37,10 @@
     <object>objects\obj_player_stats</object>
     <object>objects\obj_chest</object>
     <object>objects\obj_pause</object>
+    <object>objects\obj_notification</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\init</room>
     <room>rooms\rm_1</room>
     <room>rooms\rm_2</room>
   </rooms>
