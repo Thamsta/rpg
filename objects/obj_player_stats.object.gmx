@@ -34,6 +34,7 @@ maxHp = 10;
 hp = maxHp;
 level = 1;
 experience = 0;
+gold = 0;
 </string>
           </argument>
         </arguments>
@@ -61,6 +62,7 @@ draw_set_halign(fa_left);
 draw_set_color(c_black);
 draw_text(16,16, "HP: " + string(hp) + "/" + string(maxHp));
 draw_text(16,32, "STAMINA: " + string(ceil(stamina)) + "/" + string(maxStamina));
+draw_text(16,48, "GOLD: " + string(gold));
 draw_set_halign(fa_center);
 </string>
           </argument>

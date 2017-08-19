@@ -1,7 +1,7 @@
-right_key = keyboard_check(vk_right);
-left_key = keyboard_check(vk_left);
-up_key = keyboard_check(vk_up);
-down_key = keyboard_check(vk_down);
+right_key = keyboard_check(vk_right) or keyboard_check(ord('D'));
+left_key = keyboard_check(vk_left) or keyboard_check(ord('A'));
+up_key = keyboard_check(vk_up) or keyboard_check(ord('W'));
+down_key = keyboard_check(vk_down) or keyboard_check(ord('S'));
 sprint = keyboard_check(vk_shift);
 f_down = keyboard_check_pressed(ord('F'));
 up_down = keyboard_check_pressed(vk_up);
