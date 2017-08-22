@@ -15,6 +15,7 @@
     <sprite>sprites\spr_chest</sprite>
     <sprite>sprites\spr_gun</sprite>
     <sprite>sprites\spr_enemy1</sprite>
+    <sprite>sprites\spr_enemy2</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
