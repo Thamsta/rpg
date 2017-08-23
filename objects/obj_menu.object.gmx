@@ -94,7 +94,7 @@ draw_set_font(P1);
 draw_set_color(c_white);
 for(i=0; i &lt; array_length_1d(menu); i++){
         if(i=active){draw_set_color(c_red);}
-        draw_text(view_wport[0]/2, (i+3)*menu_gap, menu[i]);
+        draw_text(view_wport[0]/2, view_hport[0]/2 + ((i + 0.5 - array_length_1d(menu)/2) * menu_gap), menu[i]);
         draw_set_color(c_white);
     }
 </string>

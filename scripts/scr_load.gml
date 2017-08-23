@@ -7,3 +7,6 @@ stats.gold = ini_read_real('save1','GOLD',0);
 obj_player.last_room = ini_read_real('save1','ROOM',rm_1);
 room_goto(ini_read_real('save1','ROOM',rm_1));
 ini_close();
+ini_open('options.ini');
+global.fullscreen = ini_read_real('options','full',0);
+ini_close();

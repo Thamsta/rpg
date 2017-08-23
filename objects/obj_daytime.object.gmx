@@ -27,20 +27,20 @@
             <kind>1</kind>
             <string>///init
 time = 0;
-i = 0;
+i = 1;
 
-a[0] = 0.05;
+a[0] = 0.035;
 c1[0] = c_aqua;
-c2[0] = c_aqua;
+c2[0] = c_yellow;
 a[1] = 0.0;
 c1[1] = c_white;
 c1[1] = c_white;
-a[2] = 0.2;
+a[2] = 0.15;
 c1[2] = c_gray;
 c2[2] = c_blue;
-a[3] = 0.3;
+a[3] = 0.35;
 c1[3] = c_black;
-c2[3] = c_black;
+c2[3] = c_gray;
 </string>
           </argument>
         </arguments>
@@ -64,7 +64,7 @@ c2[3] = c_black;
           <argument>
             <kind>1</kind>
             <string>///get daytime
-if(current_time &gt; time + 5000)
+if(current_time &gt; time + 60000)
 {
     i = (i + 1) % 4;
     time = current_time;
