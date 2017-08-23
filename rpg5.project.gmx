@@ -48,6 +48,7 @@
       <object>objects\obj_notification</object>
       <object>objects\obj_view</object>
       <object>objects\obj_daytime</object>
+      <object>objects\obj_transition</object>
     </objects>
     <objects name="Player">
       <object>objects\obj_player</object>

@@ -113,9 +113,9 @@ if(other.is_open){
             <kind>1</kind>
             <string>/// Go through the door
 if (room_exists (other.next_room)) {
-    show_debug_message(room_get_name(other.next_room));
-    room_goto (other.next_room);
-    //room_goto(rm_1);
+    //room_goto (other.next_room);
+    var t = instance_create(0,0,obj_transition);
+    t.nxroom = other.next_room;
 }
 </string>
           </argument>
