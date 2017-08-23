@@ -69,6 +69,7 @@ width = 128;
 draw_set_color(c_gray);
 draw_rectangle(view_wport[0]/2-width/2, view_hport[0]/2-heigth/2, view_wport[0]/2+width/2, view_hport[0]/2+heigth/2, 0);
 draw_set_color(c_white);
+draw_set_font(P1);
 draw_text(view_wport[0]/2,view_hport[0]/2-8, msg);
 </string>
           </argument>

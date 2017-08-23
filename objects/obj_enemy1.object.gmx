@@ -27,8 +27,9 @@
             <kind>1</kind>
             <string>///init
 phy_fixed_rotation = true;
+hp = 3;        //HP
 time = 0;       //default
-radius = 300    //detection radius
+radius = 150    //detection radius
 dmg = 1;        //damage
 mspeed = 1;     //movement speed
 </string>
@@ -54,8 +55,8 @@ mspeed = 1;     //movement speed
           <argument>
             <kind>1</kind>
             <string>///move to player
-var col = not collision_line(x,y,obj_player.x-1,obj_player.y-1,obj_wall,true,true);
-var rad = 0 &lt; distance_to_point(obj_player.x,obj_player.y) &lt; radius;
+var col = not collision_line(x,y,obj_player.x-1,obj_player.y,obj_wall,true,true);
+var rad = distance_to_point(obj_player.x,obj_player.y) &lt; radius;
 
 if(col&amp;&amp;rad)
 {

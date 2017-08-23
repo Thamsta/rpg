@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>-1</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_menu</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,15 +26,14 @@
           <argument>
             <kind>1</kind>
             <string>///init
+event_inherited();
 pause = false;
-
+title = "GAME PAUSED";
 menu[0] = "Continue";
 menu[1] = "Save";
 menu[2] = "Load";
 menu[3] = "Exit";
 
-menu_gap = 64;
-active = 0;
 </string>
           </argument>
         </arguments>
@@ -60,20 +59,13 @@ active = 0;
             <string>///menu logic
 if(pause){
 
-scr_get_input();
-if(up_down &amp;&amp; active &gt; 0)
-{
-    active--;
-}
-else if(down_down &amp;&amp; active &lt; array_length_1d(menu)-1)
-{
-    active++;
-}
+event_inherited();
+
 if(enter)
 {
     switch(active)
     {
-    case 0: 
+    case 0:
         pause = false;
         instance_activate_all();
         break;
@@ -81,17 +73,15 @@ if(enter)
         scr_save();
         break;
     case 2:
-        scr_load();
+        pause = false;
+        instance_activate_all();
+        room_goto(init);
         break;
     case 3:
         scr_quit();
         break;
     }
 }
-
-
-
-
 }
 </string>
           </argument>
@@ -115,21 +105,9 @@ if(enter)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///draw menu
-if(pause)
+            <string>if(pause)
 {
-    draw_set_color(c_black);
-    //draw_set_alpha(0.60); only necessary with background
-    draw_rectangle(view_xport[0],view_yport[0],view_wport[0],view_hport[0], 0);
-    draw_set_halign(fa_center);
-    draw_set_color(c_white);
-    draw_text(view_wport[0]/2, 64, "GAME PAUSED"); 
-    for(i=0; i &lt; array_length_1d(menu); i++){
-        if(i=active){draw_set_color(c_red);}
-        draw_text(view_wport[0]/2, (i+3)*menu_gap, menu[i]);
-        draw_set_color(c_white);
-    }
-    //draw_set_alpha(1);  see above
+    event_inherited();
 }
 </string>
           </argument>
