@@ -10,9 +10,7 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code>global.fullscreen = 0;
-scr_resolution();
-//window_set_fullscreen(true);
+  <code>scr_resolution();
 scr_load();</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
