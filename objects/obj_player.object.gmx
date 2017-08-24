@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>/// init
 phy_fixed_rotation = true;
+image_speed = 0;
 last_room = init;
 spd = 5;
 sprScale = 1.7; //speed multiplier while sprinting
@@ -57,8 +58,24 @@ state = scr_move_state;
           <argument>
             <kind>1</kind>
             <string>///Player movement
-
+depth = -y;
 script_execute(state);
+if(hspd&gt;0)
+    {
+        image_xscale = 1;
+    }
+if(hspd&lt;0)
+    {
+        image_xscale = -1;
+    }
+if(hspd == 0)
+    {
+        image_index = 0;
+    }
+if (hspd != 0)||(vspd != 0)
+{
+    image_index++;
+}
 </string>
           </argument>
         </arguments>
@@ -192,9 +209,9 @@ scr_resolution();
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>2,16</point>
-    <point>30,16</point>
-    <point>30,32</point>
-    <point>2,32</point>
+    <point>4,12</point>
+    <point>24,12</point>
+    <point>24,32</point>
+    <point>4,32</point>
   </PhysicsShapePoints>
 </object>
